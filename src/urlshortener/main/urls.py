@@ -2,7 +2,6 @@ from django.urls import path
 
 from . import views
 
-# bind the functions to URLs
 urlpatterns = [
     path('', views.index, name='index'),
     path('shorten', views.shorten_post, name='shorten_post'),

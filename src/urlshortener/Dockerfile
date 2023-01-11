@@ -1,36 +1,14 @@
-# Build stage
-FROM python:3.9 as build-stage
+FROM python:3.9
 
-# Set the working directory
-WORKDIR /app
 
-# Copy the requirements file
-COPY requirements.txt /app/
+RUN mkdir /code
+WORKDIR /code
+RUN pip install --upgrade pip
+COPY requirements.txt /code/
 
-# Install dependencies
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
+COPY . /code/
 
-# Copy the rest of the code
-COPY . /app/
-
-# Run migrations and collectstatic
-RUN python manage.py makemigrations && \
-    python manage.py migrate && \
-    python manage.py collectstatic --noinput
-
-# Production stage
-FROM nginx:alpine
-
-# Copy the artifacts from the build stage
-COPY --from=build-stage /app/ /app/
-COPY --from=build-stage /app/static /static/
-
-# Copy the nginx config file
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Expose the port
 EXPOSE 8000
 
-# Start the server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
