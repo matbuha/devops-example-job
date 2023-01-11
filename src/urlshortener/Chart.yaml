@@ -26,9 +26,9 @@ resources:
 # Service and Ingress
 service:
   name: url-shortner
-  port: 80
+  port: 8000
   type: ClusterIP
-  externalPort: 80
+  externalPort: 8000
 
 ingress:
   enabled: true
