@@ -5,14 +5,14 @@ FROM python:3.9 as build-stage
 WORKDIR /app
 
 # Copy the requirements file
-COPY requirements.txt .
+COPY requirements.txt /app/
 
 # Install dependencies
 RUN pip install --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the code
-COPY . .
+COPY . /app/
 
 # Run migrations and collectstatic
 RUN python manage.py makemigrations && \
@@ -30,7 +30,7 @@ COPY --from=build-stage /app/static /static/
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose the port
-EXPOSE 80
+EXPOSE 8000
 
 # Start the server
 CMD ["nginx", "-g", "daemon off;"]
