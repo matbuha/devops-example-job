@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2K9EZAItqPXXCA7uydzMSnk6A7q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TF_FMT" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ariel\devops-example-job" />
+      <recent name="C:\Users\ariel\devops-example-job\src\urlshortener" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="src/urlshortener/Dockerfile build-stage" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="python3.9_build-stage" />
+          <option name="buildCliOptions" value="--target build-stage" />
+          <option name="buildKitEnabled" value="true" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="src/urlshortener/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.src/urlshortener/Dockerfile build-stage" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="" />
+      <created>1673378452455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673378452455</updated>
+    </task>
+    <task id="LOCAL‎00001" summary="update">
+      <created>1673382862679</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1673382862679</updated>
+    </task>
+    <task id="LOCAL‎00002" summary="create Dockerfile">
+      <created>1673383641214</created>
+      <option name="number" value="LOCAL‎00002" />
+      <option name="presentableId" value="LOCAL‎00002" />
+      <updated>1673383641214</updated>
+    </task>
+    <task id="LOCAL‎00003" summary="create helm chart">
+      <created>1673445656326</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1673445656326</updated>
+    </task>
+    <task id="LOCAL‎00004" summary="create helm chart">
+      <created>1673445679175</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1673445679175</updated>
+    </task>
+    <task id="LOCAL‎00005" summary="updating files">
+      <created>1673447379904</created>
+      <option name="number" value="LOCAL‎00005" />
+      <option name="presentableId" value="LOCAL‎00005" />
+      <updated>1673447379904</updated>
+    </task>
+    <task id="LOCAL‎00006" summary="updating files">
+      <created>1673447513127</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1673447513127</updated>
+    </task>
+    <task id="LOCAL‎00007" summary="updating files">
+      <created>1673465448566</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1673465448566</updated>
+    </task>
+    <task id="LOCAL‎00008" summary="updating files">
+      <created>1673468510277</created>
+      <option name="number" value="LOCAL‎00008" />
+      <option name="presentableId" value="LOCAL‎00008" />
+      <updated>1673468510277</updated>
+    </task>
+    <task id="LOCAL‎00009" summary="updating files">
+      <created>1673553318123</created>
+      <option name="number" value="LOCAL‎00009" />
+      <option name="presentableId" value="LOCAL‎00009" />
+      <updated>1673553318123</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <MESSAGE value="create Dockerfile" />
+    <MESSAGE value="create helm chart" />
+    <MESSAGE value="updating files" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating files" />
+  </component>
+</project>
