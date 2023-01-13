@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -202,7 +200,13 @@
       <option name="presentableId" value="LOCAL‎00021" />
       <updated>1673621191987</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL‎00022" summary="updating files">
+      <created>1673621696696</created>
+      <option name="number" value="LOCAL‎00022" />
+      <option name="presentableId" value="LOCAL‎00022" />
+      <updated>1673621696696</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
