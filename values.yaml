@@ -1,0 +1,5 @@
+redis:
+  password: arielbz
+image:
+  repository: devops-example-job
+  tag: dev

@@ -1,0 +1,83 @@
+apiVersion: v2
+name: web-app
+description: A Helm chart for a web app with a Flask server and Redis database
+
+dependencies:
+- name: redis
+  version: 5.0.7
+  repository: https://kubernetes-charts.storage.googleapis.com/
+
+resources:
+- values.yaml
+
+templates:
+- deployment.yaml
+- service.yaml
+- configmap.yaml
+- secrets.yaml
+
+# secrets.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redis-credentials
+type: Opaque
+data:
+  redis-password: {{ .Values.redis.password }}
+
+# configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-app-config
+data:
+  app.py: |-
+    {{ .Files.Get "app.py" | indent 4 }}
+  requirements.txt: |-
+    {{ .Files.Get "requirements.txt" | indent 4 }}
+
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app
+spec:
+  selector:
+    app: web-app
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8000
+
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - secretRef:
+            name: redis-credentials
+        - configMapRef:
+            name: web-app-config
+        volumeMounts:
+        - name: config
+          mountPath: /code
+      volumes:
+      - name: config
+        configMap:
+          name: web-app-config
