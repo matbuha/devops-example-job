@@ -1,7 +1,7 @@
 # Default values for helm.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-version: master-9d98ff9
+version: master-0385ed5
 
 replicaCount: 1
 
