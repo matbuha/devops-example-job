@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +129,13 @@
       <option name="presentableId" value="LOCAL‎00011" />
       <updated>1673601105184</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎00012" summary="updating files">
+      <created>1673601175545</created>
+      <option name="number" value="LOCAL‎00012" />
+      <option name="presentableId" value="LOCAL‎00012" />
+      <updated>1673601175545</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

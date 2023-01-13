@@ -1,5 +1,0 @@
-redis:
-  password: somepassword123
-image:
-  repository: devops-example-job
-  tag: dev
