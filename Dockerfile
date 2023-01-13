@@ -1,29 +1,23 @@
-# syntax=docker/dockerfile:1.4
-FROM --platform=$BUILDPLATFORM python:3.10-alpine AS builder
+# Use an official Python runtime as the base image
+FROM python:3.9-slim-buster
 
-RUN echo $BUILDPLATFORM
+# Set the working directory to /app
+WORKDIR /app
 
-WORKDIR /code
+# Copy the requirements.txt file to the container
+COPY requirements.txt .
 
-COPY requirements.txt /code
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip3 install -r requirements.txt
+# Install any needed packages specified in requirements.txt
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-COPY . /code
+# Copy the current directory contents into the container at /app
+COPY . .
 
-ENTRYPOINT ["python3"]
-CMD ["app.py"]
+# Make port 80 available to the world outside this container
+EXPOSE 8000
 
-FROM builder as dev-envs
+# Define environment variable
+ENV NAME World
 
-RUN -<<EOF \
-apk update \
-apk add git bash \
-EOF
-
-RUN -<<EOF \
-addgroup -S docker \
-adduser -S --shell /bin/bash --ingroup docker vscode \
-EOF
-# install Docker tools (cli, buildx, compose)
-COPY --from=gloursdocker/docker / /
+# Run app.py when the container launches
+CMD ["redis-server"]
