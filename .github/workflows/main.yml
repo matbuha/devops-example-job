@@ -23,22 +23,19 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    - name: Build and push image to Amazon ECR
+    - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: gitops-argocd
+
       run: |
-        # Build and push the image to ECR using docker-compose
+        # Build a docker container and push it to ECR
         git_hash=$(git rev-parse --short "$GITHUB_SHA")
-        export ECR_REGISTRY=$ECR_REGISTRY
-        export ECR_REPOSITORY=$ECR_REPOSITORY
-        export IMAGE_TAG=${GITHUB_REF##*/}-$git_hash
-        export IMAGE_NAME=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        docker-compose up --build
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:${GITHUB_REF##*/}-$git_hash .
         echo "Pushing image to ECR..."
-        docker push $IMAGE_NAME
-        echo "::set-output name=image::$IMAGE_NAME"
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:${GITHUB_REF##*/}-$git_hash
+        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:${GITHUB_REF##*/}-$git_hash"
 
     - name: Update Version
       run: |
