@@ -32,8 +32,8 @@ jobs:
         docker tag my-image:latest <aws_account_id>.dkr.ecr.us-west-2.amazonaws.com/my-image:latest
         docker push <aws_account_id>.dkr.ecr.us-west-2.amazonaws.com/my-image:latest
 
-- name: Update Version of Helm Chart
-  run: |
-    helm init
-    awk -F: '{ if ($1=="version") {print "version: " $2+1} else {print $0} }' Chart.yaml > Chart.yaml.tmp && mv Chart.yaml.tmp Chart.yaml
-    helm upgrade --reuse-values my-chart .
+    - name: Update Version of Helm Chart
+      run: |
+        helm init
+        awk -F: '{ if ($1=="version") {print "version: " $2+1} else {print $0} }' Chart.yaml > Chart.yaml.tmp && mv Chart.yaml.tmp Chart.yaml
+        helm upgrade --reuse-values my-chart .
