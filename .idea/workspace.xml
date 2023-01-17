@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-image.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/docker-image.yml" afterDir="false" />
-    </list>
+    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,12 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673378452455</updated>
-    </task>
-    <task id="LOCAL‎00044" summary="updating files">
-      <created>1673899521270</created>
-      <option name="number" value="LOCAL‎00044" />
-      <option name="presentableId" value="LOCAL‎00044" />
-      <updated>1673899521270</updated>
     </task>
     <task id="LOCAL‎00045" summary="updating files">
       <created>1673900153333</created>
@@ -403,7 +395,13 @@
       <option name="presentableId" value="LOCAL‎00092" />
       <updated>1673992948223</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL‎00093" summary="updating files">
+      <created>1673993315797</created>
+      <option name="number" value="LOCAL‎00093" />
+      <option name="presentableId" value="LOCAL‎00093" />
+      <updated>1673993315797</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

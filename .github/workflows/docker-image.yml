@@ -1,54 +1,87 @@
-name: Docker Image CI
+#name: Docker Image CI
+#
+#on:
+#  push:
+#    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
+#
+#jobs:
+#
+#  docker:
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - name: Checkout Code
+#      uses: actions/checkout@v3
+#
+#    - name: Bump version
+#      run: |
+#        current_version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
+#        echo "current_version: $current_version"
+#        major_version=$(echo $current_version | cut -d "." -f1)
+#        echo "major_version: $major_version"
+#        minor_version=$(echo $current_version | cut -d "." -f2)
+#        echo "minor_version: $minor_version"
+#        minor_version=$((minor_version + 1))
+#        echo "minor_version: $minor_version"
+#        new_version="$major_version.$minor_version"
+#        echo "Updating chart version to: $new_version"
+#        sed -i "s/$current_version/$new_version/g" helm/Chart.yaml
+#
+#
+#    - name: Build the Docker image
+#      run: |
+#        echo "Building image with Tag:"
+#        echo {{ .Values.image.tag }}
+#        docker build . --file Dockerfile --tag devops-example-job:{{ .Values.image.tag }}
+#
+#
+#
+#    - name: Push to Docker Hub
+#      run: |
+#        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+#        version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
+#        echo "Pushing image with version: $version"
+#        docker push devops-example-job:$version
+
+#    - name: Update Helm Chart
+#      run: |
+#        version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
+#        echo "Updating Helm chart with version: $version"
+#        helm upgrade --install gitops-app-set devops-example-job/helm/Chart.yaml --set image.tag=$version
+
+name: ci
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - 'master'
 
 jobs:
-
-  build:
-
+  docker:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
-
-    - name: Bump version
-      run: |
-        current_version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
-        echo "current_version: $current_version"
-        major_version=$(echo $current_version | cut -d "." -f1)
-        echo "major_version: $major_version"
-        minor_version=$(echo $current_version | cut -d "." -f2)
-        echo "minor_version: $minor_version"
-        minor_version=$((minor_version + 1))
-        echo "minor_version: $minor_version"
-        new_version="$major_version.$minor_version"
-        echo "Updating chart version to: $new_version"
-        sed -i "s/$current_version/$new_version/g" helm/Chart.yaml
-
-
-    - name: Build the Docker image
-      run: |
-        echo "Building image with Tag:"
-        echo {{ .Values.image.tag }}
-        docker build . --file Dockerfile --tag devops-example-job:{{ .Values.image.tag }}
-
-
-
-    - name: Push to Docker Hub
-      run: |
-        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-        version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
-        echo "Pushing image with version: $version"
-        docker push devops-example-job:$version
-
-    - name: Update Helm Chart
-      run: |
-        version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
-        echo "Updating Helm chart with version: $version"
-        helm upgrade --install gitops-app-set devops-example-job/helm/Chart.yaml --set image.tag=$version
-
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: user/app:latest
