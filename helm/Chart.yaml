@@ -1,10 +1,10 @@
-version: 1.0
+version: 1.0.0
 apiVersion: v2
 name: gitops-app-set
 
 metadata:
   name: gitops-app-set
-  version: 1.0
+  version: 1.0.0
   description: A set of applications including Polaris Dashboard and Goldilocks
 
 resources:
