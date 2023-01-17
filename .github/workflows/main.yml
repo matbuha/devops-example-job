@@ -28,12 +28,12 @@ jobs:
 
     - name: Build and Push Dockerfile
       run: |
-        docker build -t my-image .
-        docker tag my-image:latest <aws_account_id>.dkr.ecr.us-west-2.amazonaws.com/my-image:latest
-        docker push <aws_account_id>.dkr.ecr.us-west-2.amazonaws.com/my-image:latest
+        docker build -t my-image -f Dockerfile .
+        docker tag my-image:latest 538843831727.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/my-image:latest
+        docker push 538843831727.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/my-image:latest
 
     - name: Update Version of Helm Chart
       run: |
         helm init
         awk -F: '{ if ($1=="version") {print "version: " $2+1} else {print $0} }' Chart.yaml > Chart.yaml.tmp && mv Chart.yaml.tmp Chart.yaml
-        helm upgrade --reuse-values my-chart .
+        helm upgrade --reuse-values my-chart helm/chart.yml
