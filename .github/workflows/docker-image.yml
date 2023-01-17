@@ -18,17 +18,18 @@ jobs:
 
     - name: Bump version
       run: |
-        current_version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.' helm/Chart.yaml)
+        current_version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
         echo "current_version: $current_version"
         major_version=$(echo $current_version | cut -d "." -f1)
         echo "major_version: $major_version"
         minor_version=$(echo $current_version | cut -d "." -f2)
         echo "minor_version: $minor_version"
-        minor_version=$(minor_version + 1)
-        echo "minor_version: minor_version"
+        minor_version=$((minor_version + 1))
+        echo "minor_version: $minor_version"
         new_version="$major_version.$minor_version"
         echo "Updating chart version to: $new_version"
         sed -i "s/$current_version/$new_version/g" helm/Chart.yaml
+
 
 
     - name: Build the Docker image
