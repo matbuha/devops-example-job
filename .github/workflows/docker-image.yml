@@ -36,7 +36,7 @@ jobs:
       run: |
         version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
         echo "Building image with version: $version"
-        docker build . -f Dockerfile --tag devops-example-job:$version
+        docker build gitops-image -f devops-example-job/Dockerfile --tag gitops-image:$version
 
     - name: Push to Docker Hub
       run: |
@@ -49,4 +49,5 @@ jobs:
       run: |
         version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
         echo "Updating Helm chart with version: $version"
-        helm upgrade --install gitops-app-set Chart.yaml --set image.tag=$version
+        helm upgrade --install gitops-app-set devops-example-job/helm/Chart.yaml --set image.tag=$version
+
