@@ -31,7 +31,6 @@ jobs:
         sed -i "s/$current_version/$new_version/g" helm/Chart.yaml
 
 
-
     - name: Build the Docker image
       run: |
         version=$new_version
