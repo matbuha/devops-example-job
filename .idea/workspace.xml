@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files" />
+    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
+      <change beforePath="$PROJECT_DIR$/helm/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/Chart.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,12 +108,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673378452455</updated>
-    </task>
-    <task id="LOCAL‎00031" summary="updating files">
-      <created>1673711609661</created>
-      <option name="number" value="LOCAL‎00031" />
-      <option name="presentableId" value="LOCAL‎00031" />
-      <updated>1673711609661</updated>
     </task>
     <task id="LOCAL‎00032" summary="updating files">
       <created>1673711945916</created>
@@ -401,7 +397,13 @@
       <option name="presentableId" value="LOCAL‎00079" />
       <updated>1673990005598</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL‎00080" summary="updating files">
+      <created>1673990472243</created>
+      <option name="number" value="LOCAL‎00080" />
+      <option name="presentableId" value="LOCAL‎00080" />
+      <updated>1673990472243</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
