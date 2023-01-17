@@ -36,7 +36,7 @@ jobs:
       run: |
         version=$new_version
         echo "Building image with version: $version"
-        docker build gitops-image -f devops-example-job/Dockerfile --tag gitops-image:$version
+        docker build gitops-image -f devops-example-job/Dockerfile --tag devops-example-job:$version
 
     - name: Push to Docker Hub
       run: |
