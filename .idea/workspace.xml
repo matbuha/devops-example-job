@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
-      <change beforePath="$PROJECT_DIR$/helm/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/Chart.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,18 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673378452455</updated>
-    </task>
-    <task id="LOCAL‎00017" summary="updating files">
-      <created>1673615733226</created>
-      <option name="number" value="LOCAL‎00017" />
-      <option name="presentableId" value="LOCAL‎00017" />
-      <updated>1673615733226</updated>
-    </task>
-    <task id="LOCAL‎00018" summary="updating files">
-      <created>1673617273827</created>
-      <option name="number" value="LOCAL‎00018" />
-      <option name="presentableId" value="LOCAL‎00018" />
-      <updated>1673617273827</updated>
     </task>
     <task id="LOCAL‎00019" summary="updating files">
       <created>1673617442667</created>
@@ -403,7 +389,19 @@
       <option name="presentableId" value="LOCAL‎00065" />
       <updated>1673986110334</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL‎00066" summary="updating files">
+      <created>1673986395903</created>
+      <option name="number" value="LOCAL‎00066" />
+      <option name="presentableId" value="LOCAL‎00066" />
+      <updated>1673986395904</updated>
+    </task>
+    <task id="LOCAL‎00067" summary="updating files">
+      <created>1673986668509</created>
+      <option name="number" value="LOCAL‎00067" />
+      <option name="presentableId" value="LOCAL‎00067" />
+      <updated>1673986668509</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

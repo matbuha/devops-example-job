@@ -26,7 +26,7 @@ jobs:
         echo "minor_version: $minor_version"
         patch_version=$(echo $current_version | cut -d "." -f3)
         echo "patch_version: $patch_version"
-        patch_version=$((patch_version + 1))
+        $((patch_version + 1))
         echo "patch_version: $patch_version"
         new_version="$major_version.$minor_version.$patch_version"
         echo "Updating chart version to: $new_version"
