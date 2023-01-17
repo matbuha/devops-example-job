@@ -33,9 +33,8 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        version=$(grep -oP '(?<=version: )[0-9]+\.[0-9]+\.[0-9]+' helm/Chart.yaml)
-        echo "Building image with version: $version"
-        docker build devops-example-job -f Dockerfile --tag devops-example-job:$version
+        echo "Building image with tag: $(date +%s)"
+        docker build devops-example-job/Dockerfile --file Dockerfile --tag devops-example-job:$(date +%s)
 
     - name: Push to Docker Hub
       run: |
