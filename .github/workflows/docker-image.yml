@@ -33,8 +33,11 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        echo "Building image with Tag: {{ .Values.image.tag }}"
-        # docker build . --file Dockerfile --tag devops-example-job:{{ helm.Values.image.tag }}
+        echo "Building image with Tag:"
+        echo {{ .Values.image.tag }}
+        docker build . --file Dockerfile --tag devops-example-job:{{ .Values.image.tag }}
+
+
 
     - name: Push to Docker Hub
       run: |
