@@ -1,4 +1,3 @@
-# Build stage
 FROM python:3.8-slim as build-stage
 
 WORKDIR /app
@@ -9,7 +8,6 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 COPY app.py .
 
-# Final stage
 FROM python:3.8-slim
 
 WORKDIR /app

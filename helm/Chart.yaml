@@ -1,47 +1,53 @@
-version: 1.0
+version: 1.0.0
 apiVersion: v2
-name: my-app
+name: gitops-app-set
 
-# The chart's metadata
 metadata:
-  name: my-app
+  name: gitops-app-set
   version: 0.1.0
-  description: A simple Flask app with Redis
+  description: A set of applications including Polaris Dashboard and Goldilocks
 
-# The chart's resources
 resources:
-- name: my-app-config
+- name: gitops-app-config
   configMap:
-    name: my-app-config
+    name: gitops-app-config
     items:
     - key: app-config
       path: config.yaml
 
-# The chart's templates
 templates:
-- name: my-app-deployment
+- name: polaris-dashboard
   deployment:
-    name: my-app-deployment
+    name: polaris-dashboard
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: my-app
+          app: polaris-dashboard
       template:
         metadata:
           labels:
-            app: my-app
+            app: polaris-dashboard
         spec:
           containers:
-          - name: my-app
-            image: my-app:latest
+          - name: polaris-dashboard
+            image: polaris-dashboard:{{ .Values.image.tag }}
             imagePullPolicy: Always
             ports:
-            - containerPort: 8000
+            - containerPort: 8001
             envFrom:
             - configMapRef:
-                name: my-app-config
+                name: gitops-app-config
             readinessProbe:
               httpGet:
                 path: /
-                port: 8000
+                port: 8001
+
+- name: goldilocks
+  deployment:
+    name: goldilocks
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: goldilocks

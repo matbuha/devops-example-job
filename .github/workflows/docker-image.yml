@@ -1,0 +1,47 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Bump version
+      run: |
+        current_version=$(grep -oP '(?<=version: )\d+\.\d+\.\d+' Chart.yaml)
+        major_version=$(echo $current_version | cut -d "." -f1)
+        minor_version=$(echo $current_version | cut -d "." -f2)
+        patch_version=$(echo $current_version | cut -d "." -f3)
+        patch_version=$((patch_version+1))
+        new_version="$major_version.$minor_version.$patch_version"
+        echo "Updating chart version to: $new_version"
+        sed -i "s/$current_version/$new_version/g" Chart.yaml
+
+    - name: Build the Docker image
+      run: |
+        version=$(cat version.txt | cut -d ":" -f 2 | tr -d " ")
+        echo "Building image with version: $version"
+        docker build . -f Dockerfile --tag devops-example-job:$version
+
+    - name: Push to Docker Hub
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        version=$(cat version.txt | cut -d ":" -f 2 | tr -d " ")
+        echo "Pushing image with version: $version"
+        docker push devops-example-job:$version
+
+    - name: Update Helm Chart
+      run: |
+        version=$(cat version.txt | cut -d ":" -f 2 | tr -d " ")
+        echo "Updating Helm chart with version: $version"
+        helm upgrade --install my-app Chart.yaml --set image.tag=$version

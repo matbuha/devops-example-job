@@ -1,0 +1,9 @@
+polaris-dashboard:
+  host: 0.0.0.0
+  port: 8001
+  debug: False
+
+goldilocks:
+  host: 0.0.0.0
+  port: 8002
+  debug: False
