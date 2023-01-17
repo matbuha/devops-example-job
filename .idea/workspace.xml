@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
-      <change beforePath="$PROJECT_DIR$/helm/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/Chart.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,24 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673378452455</updated>
-    </task>
-    <task id="LOCAL‎00032" summary="updating files">
-      <created>1673711945916</created>
-      <option name="number" value="LOCAL‎00032" />
-      <option name="presentableId" value="LOCAL‎00032" />
-      <updated>1673711945916</updated>
-    </task>
-    <task id="LOCAL‎00033" summary="updating files">
-      <created>1673713601178</created>
-      <option name="number" value="LOCAL‎00033" />
-      <option name="presentableId" value="LOCAL‎00033" />
-      <updated>1673713601178</updated>
-    </task>
-    <task id="LOCAL‎00034" summary="updating files">
-      <created>1673713644008</created>
-      <option name="number" value="LOCAL‎00034" />
-      <option name="presentableId" value="LOCAL‎00034" />
-      <updated>1673713644008</updated>
     </task>
     <task id="LOCAL‎00035" summary="updating files">
       <created>1673721329810</created>
@@ -403,7 +383,25 @@
       <option name="presentableId" value="LOCAL‎00080" />
       <updated>1673990472243</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL‎00081" summary="updating files">
+      <created>1673990572100</created>
+      <option name="number" value="LOCAL‎00081" />
+      <option name="presentableId" value="LOCAL‎00081" />
+      <updated>1673990572100</updated>
+    </task>
+    <task id="LOCAL‎00082" summary="updating files">
+      <created>1673990733600</created>
+      <option name="number" value="LOCAL‎00082" />
+      <option name="presentableId" value="LOCAL‎00082" />
+      <updated>1673990733600</updated>
+    </task>
+    <task id="LOCAL‎00083" summary="updating files">
+      <created>1673990863482</created>
+      <option name="number" value="LOCAL‎00083" />
+      <option name="presentableId" value="LOCAL‎00083" />
+      <updated>1673990863482</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
