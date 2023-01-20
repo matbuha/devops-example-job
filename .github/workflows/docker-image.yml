@@ -1,16 +1,14 @@
+name: ci
+
 on:
   push:
     branches:
       - 'master'
-name: release-please
+
 jobs:
-  release-please:
+  docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: google-github-actions/release-please-action@v3
-          with:
-            release-type: node
-            package-name: release-please-action
       -
         name: Checkout
         uses: actions/checkout@v3
@@ -32,4 +30,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: arielbenzikri/devops-example-job:${{ env.NEW_VERSION }}
+          tags: arielbenzikri/devops-example-job:dev
