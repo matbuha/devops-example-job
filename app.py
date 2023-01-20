@@ -1,3 +1,6 @@
+VERSION = "1.0.0"
+
+
 def print_hi(name):
     print(f'Hi, {name}')
 

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57c7233e-6aa8-4357-a5aa-1917f3eb0d40" name="Changes" comment="updating files">
-      <change beforePath="$PROJECT_DIR$/.docker/docker-compose.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/docker-image.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/docker-image.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,12 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673378452455</updated>
-    </task>
-    <task id="LOCAL‎00055" summary="updating files">
-      <created>1673952274472</created>
-      <option name="number" value="LOCAL‎00055" />
-      <option name="presentableId" value="LOCAL‎00055" />
-      <updated>1673952274472</updated>
     </task>
     <task id="LOCAL‎00056" summary="updating files">
       <created>1673952377509</created>
@@ -407,7 +401,13 @@
       <option name="presentableId" value="LOCAL‎00103" />
       <updated>1674222296433</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL‎00104" summary="updating files">
+      <created>1674225100389</created>
+      <option name="number" value="LOCAL‎00104" />
+      <option name="presentableId" value="LOCAL‎00104" />
+      <updated>1674225100389</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
