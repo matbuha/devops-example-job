@@ -1,31 +1,36 @@
-# Build Stage
-FROM python:3.8-slim as build-stage
+# Use an official Python runtime as the base image
+FROM python:3.8-alpine
 
-WORKDIR /app
+# Set the working directory to /code
+WORKDIR /code
 
+# Copy the requirements file into the container
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+# Install any needed packages specified in requirements.txt
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-COPY app.py .
+# Copy the current directory contents into the container at /code
+COPY . .
 
-# Redis Stage
-FROM redis:latest as redis-stage
-
-# Run Stage
-FROM python:3.8-slim
-
-# install Redis
-RUN apt-get update && \
-    apt-get install -y redis-server
-
-WORKDIR /app
-
-COPY --from=build-stage /usr/local/lib/python3.8/site-packages/ /usr/local/lib/python3.8/site-packages/
-COPY --from=build-stage /app/app.py .
-
+# Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-# start Redis server
-CMD ["redis-server", "&"]
+# Define environment variable
+ENV REDIS_HOST redis
+ENV REDIS_PORT 6379
+
+# Run app.py when the container launches
 CMD ["python", "app.py"]
+
+# Build the image with the 'builder' target
+FROM builder as final
+
+# Use the 'redislabs/redismod' image as the base
+FROM redislabs/redismod
+
+# Expose the default Redis port
+EXPOSE 6379
+
+# Run the Redis server
+CMD ["redis-server"]
