@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/matbuha/devops-example-job/compare/v1.0.0...v1.1.0) (2023-01-21)
+
+
+### Features
+
+* going back to stable version 612da25 ([fdc12eb](https://github.com/matbuha/devops-example-job/commit/fdc12eb7226f8f17005e1a3765119742da279352))
+
 ## 1.0.0 (2023-01-20)
 
 
