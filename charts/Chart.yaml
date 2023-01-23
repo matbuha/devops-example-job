@@ -10,11 +10,25 @@ resources:
   - name: gitops-app-config
     configMap:
       name: gitops-app-config
-      items:
-        - key: app-config
-          path: config.yaml
 
 templates:
+  - name: configmap.yaml
+    configMap:
+      apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: gitops-app-config
+      data:
+        app-config: |-
+          polaris-dashboard:
+            host: 0.0.0.0
+            port: 8001
+            debug: False
+          goldilocks:
+            host: 0.0.0.0
+            port: 8002
+            debug: False
+
   - name: polaris-dashboard
     deployment:
       name: polaris-dashboard
@@ -34,14 +48,10 @@ templates:
                 imagePullPolicy: Always
                 ports:
                   - containerPort: 8001
-                envFrom:
-                  - configMapRef:
-                      name: gitops-app-config
                 readinessProbe:
                   httpGet:
                     path: /
                     port: 8001
-
   - name: goldilocks
     deployment:
       name: goldilocks
