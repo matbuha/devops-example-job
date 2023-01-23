@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/matbuha/devops-example-job/compare/v1.1.1...v2.0.0) (2023-01-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* creating helm charts and implement argocd
+
+### Features
+
+* creating helm charts and implement argocd ([8c1efe1](https://github.com/matbuha/devops-example-job/commit/8c1efe15e8abb35459e3b4d2466c1d4a8220c450))
+
 ## [1.1.1](https://github.com/matbuha/devops-example-job/compare/v1.1.0...v1.1.1) (2023-01-21)
 
 
