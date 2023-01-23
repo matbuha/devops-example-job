@@ -1,0 +1,11 @@
+apiVersion: v1
+entries:
+  gitops-app-set:
+  - apiVersion: v2
+    created: "2023-01-23T22:43:20.2015883+02:00"
+    digest: 290dfc6223c48bf7e35f29478a28457b4b5638ad3502b4f5ab4bf45efbda84ec
+    name: gitops-app-set
+    urls:
+    - https://github.com/matbuha/devops-example-job/tree/master/charts/gitops-app-set-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-01-23T22:43:20.2010266+02:00"
