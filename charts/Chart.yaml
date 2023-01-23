@@ -1,0 +1,52 @@
+version: 1.0.0
+apiVersion: v2
+name: gitops-app-set
+
+metadata:
+  name: gitops-app-set
+  description: A set of applications including Polaris Dashboard and Goldilocks
+
+resources:
+  - name: gitops-app-config
+    configMap:
+      name: gitops-app-config
+      items:
+        - key: app-config
+          path: config.yaml
+
+templates:
+  - name: polaris-dashboard
+    deployment:
+      name: polaris-dashboard
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: polaris-dashboard
+        template:
+          metadata:
+            labels:
+              app: polaris-dashboard
+          spec:
+            containers:
+              - name: polaris-dashboard
+                image: arielbenzikri/devops-example-job:dev
+                imagePullPolicy: Always
+                ports:
+                  - containerPort: 8001
+                envFrom:
+                  - configMapRef:
+                      name: gitops-app-config
+                readinessProbe:
+                  httpGet:
+                    path: /
+                    port: 8001
+
+  - name: goldilocks
+    deployment:
+      name: goldilocks
+      spec:
+        replicas: 1
+        selector:
+          matchLabels:
+            app: goldilocks
