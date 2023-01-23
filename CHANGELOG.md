@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/matbuha/devops-example-job/compare/v1.1.0...v1.1.1) (2023-01-21)
+
+
+### Bug Fixes
+
+* fix depends on docker image not working ([05dc368](https://github.com/matbuha/devops-example-job/commit/05dc36878ed31fee576d368e28fc24e43578fc81))
+
 ## [1.1.0](https://github.com/matbuha/devops-example-job/compare/v1.0.0...v1.1.0) (2023-01-21)
 
 
