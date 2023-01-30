@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/matbuha/devops-example-job/compare/v2.0.0...v3.0.0) (2023-01-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* updating helm files to implement argocd
+
+### Bug Fixes
+
+* updating helm files to implement argocd ([f2e6625](https://github.com/matbuha/devops-example-job/commit/f2e662559849b196a121ad342ed0a26667ff3d59))
+
 ## [2.0.0](https://github.com/matbuha/devops-example-job/compare/v1.1.1...v2.0.0) (2023-01-23)
 
 
