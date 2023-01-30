@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/matbuha/devops-example-job/compare/v3.0.0...v3.0.1) (2023-01-30)
+
+
+### Bug Fixes
+
+* updating helm files and directories ([201b61b](https://github.com/matbuha/devops-example-job/commit/201b61b50bf7b85f4dcfe37c312d159be3c9f09c))
+
 ## [3.0.0](https://github.com/matbuha/devops-example-job/compare/v2.0.0...v3.0.0) (2023-01-23)
 
 
